@@ -4,6 +4,8 @@
   export let title: string;
   export let description: string;
   export let image_url: string;
+  export let hover_image_url: string;
+
 
   export let follow_url: string = "https://github.com";
 </script>
@@ -17,9 +19,9 @@
     </div>
 
     <div class="back">
-      <h3>{title}</h3>
-
-      <caption>{description}</caption>
+      <div class="img">
+        <img src={`${assets}/images/${hover_image_url??image_url}`} alt="project" />
+      </div>
     </div>
   </a>
 </div>
@@ -60,6 +62,7 @@
     &:hover {
       .inner {
         transform: rotateY(180deg);
+
       }
     }
 
